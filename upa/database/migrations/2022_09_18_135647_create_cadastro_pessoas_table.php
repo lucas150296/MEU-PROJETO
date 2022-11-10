@@ -22,7 +22,7 @@ class CreateCadastroPessoasTable extends Migration
             $table->string('estadoNascimento', 2);
             $table->string('cep', 20);
             $table->string('nomeMae', 100);
-            $table->string('cpf', 20);
+            $table->string('cpf', 20)->unique();
             $table->string('rg', 20);
             $table->string('endereco', 100);
             $table->integer('numero');

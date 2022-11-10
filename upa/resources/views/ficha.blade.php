@@ -42,22 +42,19 @@ margin-right: 15px;">
 
                 <div class="col-md-3">
                     <label class="form-label">qual e a especialidade medica</label>
-                    <select name="">
-
+                    <select class="form-control" name="">
                         <option value="">qual e a especialidade medica</option>
                         @foreach ($especialidade as $key => $especialidade)
-                            <option id="texte" value="{{ $especialidade->id }}">{{ $especialidade->mone }}</option>
+                            <option value="{{ $especialidade->id }}">{{ $especialidade->mone }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
 
-                <div class="col-md-3" onmouseup="valor(this)">
-                    <label class="form-label"> Idade </label>
-
-
-
-                    <input name="teste" type="text" class="form-control" placeholder="EX:99" disabled>
-                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">relatório de medico</label>
+                    <textarea name="relatorioMedico" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
             @endif
         @endforeach
     </form>

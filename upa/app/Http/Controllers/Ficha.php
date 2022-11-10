@@ -17,8 +17,9 @@ class Ficha extends Controller
             $erro = 'Paciente nao localiza na rede da upa gastaria de cadastra';
         };
 
+        $paciente = $request->get('pacientes');
 
-        return view('abriFicha' , ['titulo' => 'abri Ficha' , 'error' => $erro ]);
+        return view('abriFicha' , ['titulo' => 'abri Ficha' , 'error' => $erro]);
 
 
     }
@@ -44,21 +45,40 @@ class Ficha extends Controller
 
     public function salva (Request $request){
 
+        $escolha = $request->get('escolha');
 
-        $op = $request->get('op');
+        if ($escolha == 1) {
+            $op = $request->get('cpf');
 
+            $pessoa = new cadastroPessoa();
+
+            $paciente = $pessoa->where('cpf', $op)->get()->first();
+
+            if (isset($paciente->id)) {
+                $id = $paciente->id;
+
+                return redirect()->route('salvaFicha', ['id' => $id]);
+            }else{
+
+                return redirect()->route('abriFicha', ['error' => 1]);
+            }
+        };
+
+        if($escolha == 2 ){
+            $op = $request->get('nome');
+
+            return redirect()->route('nomePaciente', ['op' => $op]);
+
+        };
+    }
+
+    public function nomePaciente(Request $request){
+        $paciente = $request->get('op');
         $pessoa = new cadastroPessoa();
+        $pacientes = $pessoa::where('nomeCompleto', 'like' , "%$paciente%")->get();
 
-        $paciente = $pessoa->where('id', $op)->get()->first();
+        return view('teste', ['pacientes' => $pacientes, 'op' => $paciente]);
 
-        if (isset($paciente->id)) {
-            $id = $paciente->id;
-
-            return redirect()->route('salvaFicha', ['id' => $id]);
-        }else{
-
-            return redirect()->route('abriFicha', ['error' => 1]);
-        }
 
 
     }

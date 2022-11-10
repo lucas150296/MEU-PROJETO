@@ -1,18 +1,36 @@
 @extends('extencao.pagianl')
 
-@section('tiulo' , $titulo)
+@section('tiulo', $titulo)
 
 @section('conteudo')
-    <form action="{{ route('site.ficha') }}" method="post" style="margin-top: 10px;margin-left: 20px;" >
+    <form action="{{ route('site.ficha') }}" method="post" style="margin-top: 10px;margin-left: 20px;">
         @csrf
 
-        <label for="">cpf do paciente</label>
+        <div style="text-align: center">
+            <label for="">escolha a identificação </label>
+            <select name="escolha" id="escolha" required onchange="mask()">
+                <option value="">escolha</option>
+                <option value="1">cpf</option>
+                <option value="2">nome</option>
+            </select>
+            <div id="cpf" style="display: none">
+                <label style="margin-top: 10px" for="">cpf do paciente</label>
+                <input name="cpf" type="text" class="cpf-mask">
+                <button type="submit">busca</button>
+            </div>
 
-        <input id="cpf" type="text" name="op" required>
+            <div id="nome" style="display: none">
+                <label style="margin-top: 10px" for="">digite o nome do paciente</label>
+                <input name="nome" type="text">
+                <button type="submit">busca</button>
+            </div>
 
-        <button type="submit">busca</button>
+
+            {{ isset($error) && $error != '' ? $error : '' }}
+        </div>
+
     </form>
-  {{ isset($error) && $error != '' ? $error : '' }}
+
 
 
     <hr style="border-top-width: 9px;">

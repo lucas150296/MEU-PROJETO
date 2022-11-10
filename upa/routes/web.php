@@ -26,5 +26,6 @@ Route::get('/salvaFicha', 'Ficha@salvaFicha')->name('salvaFicha');
 
 Route::get('/ficha', 'Ficha@ficha')->name('site.ficha');
 Route::post('/ficha', 'Ficha@salva')->name('site.ficha');
+Route::get('/nomePacientes', 'Ficha@nomePaciente')->name('nomePaciente');
 
 

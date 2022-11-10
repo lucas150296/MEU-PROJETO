@@ -3,8 +3,12 @@
 @section('tiulo', 'cadastro')
 
 @section('conteudo')
-<h1 style="text-align : center ; margin-top: 100px ">OLA BEM VINDA A UPA 24H </h1>
+<img src="{{ asset('Imagens_UPA.jpg')}} " style="margin-left: 28%" alt="">
+<h1 style="text-align : center  ">OLA BEM VINDA A UPA 24H </h1>
 <h3 style="text-align: center; margin-top 10px">AQUI VOCÊ VAI CADASTRO NO BANCO DE DADO DA UPA 24H </h3>
+<div style="text-align: center; margin-top 10px" style="text-colo">
+    {{ isset($error ) && $error != '' ? $error : '' }}
+</div>
 
 
 <form action="{{ route('site.cadastro') }}" method="POST" class="row g-3 needs-validation"
