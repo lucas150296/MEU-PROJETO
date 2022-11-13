@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\medicoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,17 +16,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'principalController@principal')->name('site.principal');
 
-Route::get('/cadastro', 'CadastroController@cadastro')->name('site.cadastro');
-Route::post('/cadastro', 'CadastroController@salva')->name('site.cadastro');
-
 Route::get('/abriFicha', 'Ficha@abriFicha')->name('abriFicha');
 
 Route::post('/salvaFicha', 'Ficha@salvaFicha')->name('salvaFicha');
 Route::get('/salvaFicha', 'Ficha@salvaFicha')->name('salvaFicha');
 
-
 Route::get('/ficha', 'Ficha@ficha')->name('site.ficha');
 Route::post('/ficha', 'Ficha@salva')->name('site.ficha');
+
 Route::get('/nomePacientes', 'Ficha@nomePaciente')->name('nomePaciente');
 
 
+
+Route::prefix('/cadastro')->group(function () {
+    Route::get('/paciente', 'CadastroController@cadastro')->name('site.cadastro');
+    Route::post('/paciente', 'CadastroController@salva')->name('site.cadastro');
+
+    Route::get('/medico', 'medicoController@cadastro')->name('medico.cadastro');
+    Route::post('/medico', 'medicoController@salva')->name('cadastro');
+
+});

@@ -1,6 +1,6 @@
 @extends('extencao.pagianl')
 
-@section('tiulo', 'principal')
+@section('titulo', 'principal')
 
 @section('conteudo')
 
@@ -27,6 +27,11 @@
             <div class="col, btn btn-secondary" style="margin-top: 20px">
                 <button type="button" class="btn btn-secondary"><a style="color: rgb(200, 198, 198)"
                     href="{{ route('abriFicha') }}">ABRI FICHA DE ATENDIMENTO</a></button>
+            </div>
+
+            <div class="col, btn btn-secondary" style="margin-top: 20px">
+                <button type="button" class="btn btn-secondary"><a style="color: rgb(200, 198, 198)"
+                    href="{{ route('medico.cadastro') }}">CADASTRO MEDICO</a></button>
             </div>
 
         </div>

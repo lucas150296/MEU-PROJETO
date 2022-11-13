@@ -1,6 +1,6 @@
 @extends('principal')
 
-@section('tiulo', 'salva ficha')
+@section('titulo', 'salva ficha')
 
 @section('conteudo')
     <form action="" method="post" class="row g-3 needs-validation" style="margin-left: 15px;

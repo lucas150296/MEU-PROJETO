@@ -1,6 +1,6 @@
 @extends('extencao.pagianl')
 
-@section('tiulo', 'pacientes')
+@section('titulo', 'pacientes')
 
 @section('conteudo')
 

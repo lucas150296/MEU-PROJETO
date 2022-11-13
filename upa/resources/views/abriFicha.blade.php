@@ -1,6 +1,6 @@
 @extends('extencao.pagianl')
 
-@section('tiulo', $titulo)
+@section('titulo', $titulo)
 
 @section('conteudo')
     <form action="{{ route('site.ficha') }}" method="post" style="margin-top: 10px;margin-left: 20px;">

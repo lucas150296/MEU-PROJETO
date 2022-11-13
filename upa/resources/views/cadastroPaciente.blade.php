@@ -1,6 +1,6 @@
 @extends('extencao.pagianl')
 
-@section('tiulo', 'cadastro')
+@section('titulo', 'cadastro')
 
 @section('conteudo')
 <img src="{{ asset('Imagens_UPA.jpg')}} " style="margin-left: 28%" alt="">

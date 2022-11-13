@@ -15,7 +15,7 @@ class CadastroController extends Controller
             $erro = 'Paciente ja cadastrado na upa';
         };
 
-        return view('cadastro' , ['error' => $erro]);
+        return view('cadastroPaciente' , ['error' => $erro]);
     }
 
     public function salva(Request $request){
