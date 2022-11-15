@@ -33,6 +33,6 @@ Route::prefix('/cadastro')->group(function () {
     Route::post('/paciente', 'CadastroController@salva')->name('site.cadastro');
 
     Route::get('/medico', 'medicoController@cadastro')->name('medico.cadastro');
-    Route::post('/medico', 'medicoController@salva')->name('cadastro');
+    Route::post('/medico', 'medicoController@salva')->name('medico.cadastro');
 
 });

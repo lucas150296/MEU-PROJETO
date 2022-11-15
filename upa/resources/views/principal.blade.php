@@ -12,7 +12,7 @@
             <div class="col, btn btn-secondary" style="margin-top: 20px">
 
                 <button type="button" class="btn btn-secondary"><a style="color: rgb(200, 198, 198)"
-                     href="{{ route('site.principal') }}">INICIO</a></button>
+                        href="{{ route('site.principal') }}" onclick="">INICIO</a></button>
 
 
             </div>
@@ -20,18 +20,18 @@
             <div class="col, btn btn-secondary" style="margin-top: 20px">
 
                 <button type="button" class="btn btn-secondary"><a style="color: rgb(200, 198, 198)"
-                        href="{{ route('site.cadastro') }}">CADASTRO</a></button>
+                        href="{{ route('site.cadastro') }}" target="_blank">CADASTRO</a></button>
 
             </div>
 
             <div class="col, btn btn-secondary" style="margin-top: 20px">
                 <button type="button" class="btn btn-secondary"><a style="color: rgb(200, 198, 198)"
-                    href="{{ route('abriFicha') }}">ABRI FICHA DE ATENDIMENTO</a></button>
+                        href="{{ route('abriFicha') }}">ABRI FICHA DE ATENDIMENTO</a></button>
             </div>
 
             <div class="col, btn btn-secondary" style="margin-top: 20px">
                 <button type="button" class="btn btn-secondary"><a style="color: rgb(200, 198, 198)"
-                    href="{{ route('medico.cadastro') }}">CADASTRO MEDICO</a></button>
+                        href="{{ route('medico.cadastro') }}" target="_blank">CADASTRO MEDICO</a></button>
             </div>
 
         </div>

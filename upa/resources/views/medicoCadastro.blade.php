@@ -10,7 +10,7 @@
         {{ isset($error) && $error != '' ? $error : '' }}
     </div>
 
-    <form action="{{ route('cadastro') }}" method="post" class="row g-3 needs-validation"
+    <form action="{{ route('medico.cadastro') }}" method="post" class="row g-3 needs-validation"
         style="margin-left: 15px; margin-right: 15px;">
         @csrf
         <div class="col-md-8">

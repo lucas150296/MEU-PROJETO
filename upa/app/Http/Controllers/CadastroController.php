@@ -31,8 +31,8 @@ class CadastroController extends Controller
             return redirect()->route('site.cadastro', ['erro' => $error]);
         } else {
             cadastroPessoa::create($request->all());
-        return redirect()->route('site.principal');
-        }
+            echo "<script>window.close();</script>";
+         }
 
 
 
