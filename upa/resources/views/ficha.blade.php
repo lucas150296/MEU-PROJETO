@@ -37,8 +37,7 @@ margin-right: 15px;">
                     border-top: 1px dashed rgba(6, 6, 6, 0.993);
                     border-bottom: 2px solid hsla(0, 0%, 0%, 0.964);
                     height: 3px;
-                  ">
-
+                ">
 
                 <div class="col-md-3">
                     <label class="form-label">qual e a especialidade medica</label>

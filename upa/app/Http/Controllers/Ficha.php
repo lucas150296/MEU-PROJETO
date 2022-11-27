@@ -9,15 +9,12 @@ use App\AreasMesdicas;
 class Ficha extends Controller
 {
 
-    public function abriFicha(Request $request){
-
+    public function index(Request $request){
         $erro = "";
 
         if($request->get('error') == 1){
             $erro = 'Paciente nao localiza na rede da upa gastaria de cadastra';
         };
-
-        $paciente = $request->get('pacientes');
 
         return view('abriFicha' , ['titulo' => 'abri Ficha' , 'error' => $erro]);
 
@@ -43,7 +40,7 @@ class Ficha extends Controller
         return view('ficha', ['titulo' => $request->get('nomeCompleto')]);
     }
 
-    public function salva (Request $request){
+    public function busca (Request $request){
 
         $escolha = $request->get('escolha');
 
@@ -57,7 +54,7 @@ class Ficha extends Controller
             if (isset($paciente->id)) {
                 $id = $paciente->id;
 
-                return redirect()->route('salvaFicha', ['id' => $id]);
+                return redirect()->route('ficha', ['id' => $id]);
             }else{
 
                 return redirect()->route('abriFicha', ['error' => 1]);

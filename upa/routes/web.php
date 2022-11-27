@@ -14,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'principalController@principal')->name('site.principal');
+Route::get('/', 'principalController@index')->name('site.principal');
 
-Route::get('/abriFicha', 'Ficha@abriFicha')->name('abriFicha');
+Route::get('/abriFicha', 'Ficha@index')->name('abriFicha');
 
-Route::post('/salvaFicha', 'Ficha@salvaFicha')->name('salvaFicha');
-Route::get('/salvaFicha', 'Ficha@salvaFicha')->name('salvaFicha');
+Route::post('/salvaFicha', 'Ficha@salvaFicha')->name('ficha');
+Route::get('/salvaFicha', 'Ficha@salvaFicha')->name('ficha');
 
-Route::get('/ficha', 'Ficha@ficha')->name('site.ficha');
-Route::post('/ficha', 'Ficha@salva')->name('site.ficha');
+Route::get('/ficha', 'Ficha@ficha')->name('cadastro');
+Route::post('/ficha', 'Ficha@busca')->name('site.ficha');
 
 Route::get('/nomePacientes', 'Ficha@nomePaciente')->name('nomePaciente');
 

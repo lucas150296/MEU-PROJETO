@@ -3,7 +3,7 @@
 @section('titulo', 'cadastro')
 
 @section('conteudo')
-<img src="{{ asset('Imagens_UPA.jpg')}} " style="margin-left: 28%" alt="">
+<img src="{{ asset('Imagens_UPA.jpg')}} " class="cadastro">
 <h1 style="text-align : center  ">OLA BEM VINDA A UPA 24H </h1>
 <h3 style="text-align: center; margin-top 10px">AQUI VOCÊ VAI CADASTRO NO BANCO DE DADO DA UPA 24H </h3>
 <div style="text-align: center; margin-top 10px" style="text-colo">
@@ -11,51 +11,49 @@
 </div>
 
 
-<form action="{{ route('site.cadastro') }}" method="POST" class="row g-3 needs-validation"
-    style="margin-left: 15px;
-margin-right: 15px;">
+<form action="{{ route('site.cadastro') }}" method="POST" class="row g-3 needs-validation formulario">
 
     @csrf
 
     <div class="col-md-4">
-        <label class="form-label">nome completo</label>
+        <label class="form-label">Nome Completo</label>
         <input name="nomeCompleto" type="text" class="form-control" value="nome" required>
         <div class="valid-feedback">
             Looks good!
         </div>
     </div>
 
-    <div class="col-md-4">
-        <label class="form-label">estado civil </label>
+    <div class="col-md-2">
+        <label class="form-label">Estado Civil </label>
         <select name="estadoCivil" class="form-select" required>
-            <option selected disabled value="">estado</option>
+            <option selected disabled value="">Estado</option>
             <option value="1">casalado(a) </option>
-            <option value="2">solteiro(a) </option>
-            <option value="3">viúvo(a)</option>
+            <option value="2">Solteiro(a) </option>
+            <option value="3">Viúvo(a)</option>
             <option value="4"></option>
         </select>
     </div>
 
     <div class="col-md-2">
-        <label class="form-label" for="form-label">ano Nascimento</label>
-        <input id="ano_nascimento" name="ano_nascimento" type="text" class="form-control" placeholder="EX:1999" required onchange="mostraValor()">
+        <label class="form-label" for="form-label">Ano Nascimento</label>
+        <input id="ano_nascimento" name="ano_nascimento" type="date" class="form-control" placeholder="EX:1999" required onchange="mostraValor()">
     </div>
-    <div class="col-md-1">
-        <label class="form-label" for="form-label">idade</label>
+    <div class="col-md-2">
+        <label class="form-label" for="form-label">Idade</label>
         <input name="idade" type="text" class="form-control" placeholder="EX:99" disabled>
     </div>
 
 
     <div class="col-md-6">
-        <label for="validationCustom03" class="form-label">cidade de nascimento</label>
+        <label for="validationCustom03" class="form-label">Cidade de Nascimento</label>
         <input name="cidadeNascimento" type="text" class="form-control" id="cidade" required>
 
     </div>
 
     <div class="col-md-3">
-        <label for="validationCustom04" class="form-label">estado de nascimento</label>
+        <label for="validationCustom04" class="form-label">Estado Nascimento</label>
         <select name="estadoNascimento" class="form-select" required>
-            <option selected disabled value="">estado</option>
+            <option selected disabled value="">Estado</option>
             <option value="AC">Acre</option>
             <option value="AL">Alagoas</option>
             <option value="AP">Amapá</option>
@@ -91,7 +89,7 @@ margin-right: 15px;">
 
 
     <div class="col-md-3">
-        <label class="form-label">cep</label>
+        <label class="form-label">Cep</label>
         <input  name="cep" type="text" class="form-control cep-mask" id="cep"
             placeholder="Ex.: 00000-000" required>
         <div class="invalid-feedback">
@@ -100,7 +98,7 @@ margin-right: 15px;">
     </div>
 
     <div class="col-md-4">
-        <label class="form-label">nome da mae</label>
+        <label class="form-label">Nome da Mae</label>
         <input name="nomeMae" type="text" class="form-control" id="nomeMae" required>
 
     </div>
@@ -114,7 +112,7 @@ margin-right: 15px;">
 
     <div class="col-md-4">
         <label class="from-label">RG</label>
-        <input name="rg" type="text" class="form-control " placeholder="EX.: 00.000.000" required>
+        <input id="rg" name="rg" type="text" class="form-control "  placeholder="EX.: 00.000.000" required onchange="maskRg()" >
 
     </div>
 
@@ -124,31 +122,31 @@ margin-right: 15px;">
 
     </div>
     <div class="col-md-2">
-        <label class="from-label">númeno</label>
+        <label class="from-label">Númeno</label>
         <input name="numero" type="number" class="form-control" placeholder="EX.: 000" required>
 
     </div>
 
     <div class="col-md-8">
-        <label class="from-label">bairro</label>
+        <label class="from-label">Bairro</label>
         <input name="bairro" type="text" class="form-control" placeholder="EX.: sao sebastião" required>
 
     </div>
 
     <div class="col-md-4">
-        <label class="from-label">cidade</label>
+        <label class="from-label">Cidade</label>
         <input name="cidade" type="text" class="form-control" placeholder="EX.: matozinhos" required>
 
     </div>
     <div class="col-md-6">
-        <label class="from-label">telefone</label>
-        <input name="telefone" type="number" class="form-control " placeholder="Ex: 31 90000-0000" required>
+        <label class="from-label">Telefone</label>
+        <input id="telefone" name="telefone" type="text" class="form-control " placeholder="Ex: 31 90000-0000" required maxlength="13" onchange="maskTelefone()" >
 
     </div>
 
 
-    <div class="col-12">
-        <button id="oi" class="btn btn-primary" type="submit">salva</button>
+    <div class="col-12" >
+        <button id="oi" class="btn btn-primary" type="submit">Salva</button>
     </div>
 </form>
 

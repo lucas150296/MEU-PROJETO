@@ -3,23 +3,24 @@
 @section('titulo', $titulo)
 
 @section('conteudo')
-    <form action="{{ route('site.ficha') }}" method="post" style="margin-top: 10px;margin-left: 20px;">
+    <form action="{{ route('site.ficha') }}" method="post" >
         @csrf
 
-        <div style="text-align: center">
+        <div class="centro">
             <label for="">escolha a identificação </label>
-            <select name="escolha" id="escolha" required onchange="mask()">
-                <option value="">escolha</option>
+            <select name="escolha" id="escolha" required onchange="habilitaEscolha()">
+                <option value="">Escolha</option>
                 <option value="1">cpf</option>
                 <option value="2">nome</option>
             </select>
-            <div id="cpf" style="display: none">
+
+            <div id="cpf" class="escola">
                 <label style="margin-top: 10px" for="">cpf do paciente</label>
                 <input name="cpf" type="text" class="cpf-mask">
                 <button type="submit">busca</button>
             </div>
 
-            <div id="nome" style="display: none">
+            <div id="nome" class="escola">
                 <label style="margin-top: 10px" for="">digite o nome do paciente</label>
                 <input name="nome" type="text">
                 <button type="submit">busca</button>
@@ -31,8 +32,6 @@
 
     </form>
 
-
-
-    <hr style="border-top-width: 9px;">
+     <hr>
 
 @endsection
